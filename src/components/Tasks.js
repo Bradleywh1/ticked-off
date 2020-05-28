@@ -1,6 +1,7 @@
 import React from 'react';
+import { Checkbox } from './Checkbox';
 
-export const tasks = () => {
+export const Tasks = () => {
     const tasks = []; 
 
     let projectName = '';
@@ -13,6 +14,7 @@ export const tasks = () => {
                 {tasks.map(task => (
                     <li key={`${task.id}`}>
                         <Checkbox id={task.id} />
+                        <span>{task.task}</span>
                     </li>
                 ))}
             </ul>
