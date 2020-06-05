@@ -1,11 +1,17 @@
 import React from 'react';
 import { Checkbox } from './Checkbox';
 import { useTasks } from '../hooks';
+import { collatedTasks } from '../constants';
+import { getTitle, getCollatedTitle, collatedTasksExists } from '../helpers';
+import { useTasks } from '../hooks';
+import { useSelectedProjectValue, useProjectsVal, useProjectsValue } from '../context';
 
 export const Tasks = () => {
-    const { tasks } = useTasks('1'); 
+    const { selectedProject } = useSelectedProjectValue();
+    const { projects } = useProjectsValue();
+    const { tasks } = useTasks(selectedProject); 
 
-    let projectName = '';
+    const projectName = '';
 
     return (
         <div className="tasks" data-testid="tasks">
